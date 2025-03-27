@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital</title>
+    <link rel="stylesheet" href="css/Library.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Biblioteca Digital</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Catálogo</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#" id="contactLink">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Slideshow -->
+    <section class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="img/img1.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/img2.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/img3.jpg" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+            <img src="img/img4.jpg" style="width:100%">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </section>
+
+    <main>
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="Buscar libros...">
+            <button id="searchButton">Buscar</button>
+        </section>
+        <section class="register-book">
+            <h2>Registrar Libro</h2>
+            <form id="formularioLibro" action="upload.php" method="POST" enctype="multipart/form-data">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+                
+                <label for="autor">Autor:</label>
+                <input type="text" id="autor" name="autor" required>
+                
+                <label for="pdfFile">Subir PDF:</label>
+                <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
+                
+                <button type="submit">Registrar Libro</button>
+            </form>
+
+            <h3>Libros Registrados</h3>
+            <div id="listaLibros"></div>
+        </section>
+        <section id="iframeContainer">
+            <!--Aquí se mostrará el PDF -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Biblioteca Digital. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modal de Contacto -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contacto</h2>
+            <p>Para más información, puedes contactarnos a través de los siguientes medios:</p>
+            <ul>
+                <li>Email: L20180979@slp.tecnm.mx</li>
+                <li>Teléfono: 44 42 36 40 91</li>
+                <li>Dirección: Av. Tecnológico s/n, Col. Unidad Ponciano Arriaga C.P. 78437, Soledad de Graciano Sánchez, S.L.P.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/librar.js"></script>
+</body>
+</html>
